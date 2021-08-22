@@ -8,10 +8,9 @@ const options = {
     host: 'localhost:3000',
     basePath: '/api',
     produces: [
-      'application/json',
-      'application/xml'
+      'application/json'
     ],
-    schemes: ['http', 'https'],
+    schemes: ['http'],
     securityDefinitions: {
       JWT: {
         type: 'apiKey',
@@ -22,7 +21,7 @@ const options = {
     }
   },
   basedir: __dirname, // app absolute path
-  files: ['../routes/**/*.js'] // Path to the API handle folder},
+  files: ['../routes/**/*.js', '../models/*.js'] // Path to the API handle folder},
 }
 
 module.exports = (app) => swaggerGen(app)(options)
